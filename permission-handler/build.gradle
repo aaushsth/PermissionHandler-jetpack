@@ -30,9 +30,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
     buildFeatures {
         compose true
     }
@@ -62,13 +59,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-
-publishing {
-    publications {
-        myPublication(MavenPublication) {
-            groupId = 'com.github.aaushsth'
-            artifactId = 'permission-handler-compose'
-            version = '1.0'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.aaushsth'
+                artifactId = 'permission-handler-compose'
+                version = '1.0'
+            }
         }
     }
 }

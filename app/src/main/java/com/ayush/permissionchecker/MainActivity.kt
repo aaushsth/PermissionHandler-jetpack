@@ -19,10 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ayush.permission_handler.permission.HandlePermissionsRequest
 import com.ayush.permissionchecker.ui.theme.PermissionCheckerTheme
-import com.ayush.permission_handler.permission.PermissionCheckerScreen
-import com.ayush.permission_handler.permission.PermissionsHandler
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 class MainActivity : ComponentActivity() {
@@ -38,9 +35,9 @@ class MainActivity : ComponentActivity() {
                     Manifest.permission.ACCESS_COARSE_LOCATION
                 )
             }
-            val permissionsHandler = remember(permissions) { PermissionsHandler() }
+        /*    val permissionsHandler = remember(permissions) { PermissionsHandler() }
             val permissionsStates by permissionsHandler.state.collectAsState()
-            HandlePermissionsRequest(permissions = permissions, permissionsHandler = permissionsHandler)
+            HandlePermissionsRequest(permissions = permissions, permissionsHandler = permissionsHandler)*/
 
             PermissionCheckerTheme {
                 // A surface container using the 'background' color from the theme
@@ -54,7 +51,7 @@ class MainActivity : ComponentActivity() {
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        if (permissionsStates.multiplePermissionsState?.allPermissionsGranted == true) {
+                     /*   if (permissionsStates.multiplePermissionsState?.allPermissionsGranted == true) {
                             Text(text = "Permission Granted")
                         } else {
                             Button(onClick = {
@@ -64,7 +61,7 @@ class MainActivity : ComponentActivity() {
                             }) {
                                 Text(text = "Request Permission")
                             }
-                        }
+                        }*/
                     }
                 }
             }
