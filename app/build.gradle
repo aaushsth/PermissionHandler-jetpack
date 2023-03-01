@@ -65,5 +65,5 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
-    implementation "com.github.aaushsth:PermissionHanler-jetpack:1.0"
+    implementation 'com.github.aaushsth:PermissionHanler-jetpack:1.0'
 }
